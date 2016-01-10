@@ -1,6 +1,6 @@
 var app=angular.module("ngAnimateApp",['ngAnimate']);
 
-app.controller("ngAnimateController", function($scope,$timeout) {
+app.controller("ngAnimateController", function($scope,$filter,$timeout) {
     $scope.customers=[];
     $scope.showControl=false;
     $scope.customer =  [
@@ -26,8 +26,15 @@ app.controller("ngAnimateController", function($scope,$timeout) {
     $scope.showDiv=function(){
         $scope.showControl=!$scope.showControl;
     };
+    $scope.clearText=function(){
+        $scope.message="";
+    };
+    $scope.abc=$scope.customers;
+    $scope.$watch('message', function(val){
+        $scope.customers = $filter('filter')($scope.abc, val);
+    });
     $scope.init=function(){
-        $timeout(function(){$scope.load()}, 1000);
+        $timeout(function(){$scope.load()}, 500);
     };
     $scope.init();
 });
