@@ -2,6 +2,7 @@ var app=angular.module("ngAnimateApp",['ngAnimate']);
 
 app.controller("ngAnimateController", function($scope,$timeout) {
     $scope.customers=[];
+    $scope.showControl=false;
     $scope.customer =  [
         {name:"Rachel",description:"One More Day"},
         {name:"Ross",description:"One More Day"},
@@ -21,9 +22,12 @@ app.controller("ngAnimateController", function($scope,$timeout) {
     };
     $scope.removeCustomers=function(index){
         $scope.customers.splice(index,1);
-    }
+    };
+    $scope.showDiv=function(){
+        $scope.showControl=!$scope.showControl;
+    };
     $scope.init=function(){
-        $timeout(function(){$scope.load()}, 3000);
+        $timeout(function(){$scope.load()}, 1000);
     };
     $scope.init();
 });
