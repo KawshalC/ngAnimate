@@ -1,0 +1,38 @@
+ul{
+    list-style: none;
+    border-bottom: 1px solid red;
+}
+ul>li{
+    width: 200px;
+    display: inline-block;
+    border:1px solid #D5D5D5;
+    margin:10px;
+}
+.name{
+    background-color: darkcyan;
+    padding: 5px;
+    color: #FFFFFF;
+}
+.description{
+    padding: 5px;
+}
+.ng-animate.ng-enter{
+    transition: 0.75s;
+    opacity: 0;
+}
+.ng-animate.ng-enter-stagger{
+    transition-delay: 0.1s;
+}
+.ng-animate.ng-enter-active{
+    opacity: 1;
+}
+.ng-animate.ng-leave{
+transition: 0.75s;
+    opacity: 1;
+}
+.ng-animate.ng-leave-stagger{
+    transition-delay: 0.1s;
+}
+.ng-animate.ng-leave-active{
+    opacity: 0;
+}

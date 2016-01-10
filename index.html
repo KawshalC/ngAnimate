@@ -1,0 +1,31 @@
+<html ng-app="ngAnimateApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="lib/angular.js" type="text/javascript"></script>
+    <script src="lib/angular-animate.js" type="text/javascript"></script>
+    <script src="index.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div ng-controller="ngAnimateController">
+    <input type="text" ng-model="message">
+    <button ng-click="addCustomers()">Add Customers</button>
+    <button ng-click="load()">Load Customers</button>
+    <ul>
+        <li ng-class="ng-animate" ng-repeat="cust in customers track by $index">
+            <div>
+                <div class="name">
+                    <span ng-bind="cust.name"></span>
+                    <span ng-click="removeCustomers($index)" style="float: right;cursor: pointer">Delete</span>
+                </div>
+                <div class="description">
+                    <span ng-bind="cust.description"></span>
+                </div>
+            </div>
+
+        </li>
+    </ul>
+</div>
+</body>
+</html>
